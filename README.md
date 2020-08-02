@@ -1,4 +1,4 @@
-__NB__: There is an english version of this file: [README.en.md](https://github.com/chocolord/infosdumonde/README.en.md).
+__NB__: There is an english version of this file: README.en.md
 
 # Présentation
 

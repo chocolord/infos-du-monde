@@ -15,11 +15,11 @@ You can clone this repository to find news on other topics, in other languages, 
 When you have these keys and tokens you just need to save them in a file named `credentials.py` like that:
 
 ```python
-gnews_api_token = 'VOTRE_GNEWS_API_TOKEN'
-twitter_api_key = 'VOTRE_TWITTER_API_KEY'
-twitter_api_secret_key = 'VOTRE_TWITTER_API_SECRET_KEY'
-twitter_access_token = 'VOTRE_TWITTER_ACCESS_TOKEN'
-twitter_access_token_secret = 'VOTRE_TWITTER_ACCESS_TOKEN_SECRET'
+gnews_api_token = 'YOUR_GNEWS_API_TOKEN'
+twitter_api_key = 'YOUR_TWITTER_API_KEY'
+twitter_api_secret_key = 'YOUR_TWITTER_API_SECRET_KEY'
+twitter_access_token = 'YOUR_TWITTER_ACCESS_TOKEN'
+twitter_access_token_secret = 'YOUR_TWITTER_ACCESS_TOKEN_SECRET'
 ```
 This file will be used by the `post_the_tweet.py` to connect to the APIs in order to achieve the mission.
 

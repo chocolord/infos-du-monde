@@ -7,8 +7,8 @@ import twitter
 # loading credentials
 from credentials import *
 
-print("bonjour les amis: %s" % twitter_api_key)
-exit(0)
+# settings parameters
+language = "fr" # choose with https://gnews.io/docs/v3#languages
 
 # get country name
 file = open("pays.txt", "r")
@@ -16,12 +16,10 @@ allPays = file.readlines()
 file.close()
 country = random.choice(allPays).replace("\n", "")
 
-# get article link
-url = "https://gnews.io/api/v3/search?q=%s&token=%s&lang=fr&max=1" % (country, gnews_api_token)
+# get article url
+url = "https://gnews.io/api/v3/search?q=%s&token=%s&lang=%s&max=1" % (country, gnews_api_token, language)
 r = requests.get(url)
-
-# print(r.json()["articles"][0]["url"])
-lien_article = r.json()["articles"][0]["url"]
+article_url = r.json()["articles"][0]["url"]
 
 # tweet the link !!!
 api = twitter.Api(
@@ -32,7 +30,7 @@ api = twitter.Api(
         )
 
 status = api.PostUpdate(
-        status = lien_article
+        status = article_url
         )
 
 # print(status.text)

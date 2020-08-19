@@ -11,10 +11,8 @@ from credentials import *
 language = "fr" # choose with https://gnews.io/docs/v3#languages
 
 # get country name
-file = open("pays.txt", "r")
-allPays = file.readlines()
-file.close()
-country = random.choice(allPays).replace("\n", "")
+from pays import pays
+country = random.choice(pays)
 
 # get article url
 url = "https://gnews.io/api/v3/search?q=%s&token=%s&lang=%s&max=1" % (country, gnews_api_token, language)
@@ -29,8 +27,10 @@ api = twitter.Api(
         access_token_secret = twitter_access_token_secret
         )
 
+text = "Le pays choisi est %s\n\n%s" % (country, article_url)
+
 status = api.PostUpdate(
-        status = article_url
+        status = text
         )
 
-# print(status.text)
+print("CGOOD")
